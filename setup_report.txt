@@ -1,0 +1,38 @@
+=== Developer Onboarding Check ===
+
+[PASS] Python version: 3.14.3 (>= 3.10 required)  (0.0ms)
+[PASS] Virtual environment: Active (onboarding_env)  (0.0ms)
+[PASS] pylint installed: version 4.0.5  (0.0ms)
+[FAIL] black: NOT installed  (50.6ms)
+[PASS] Internet connectivity: OK  (1143.2ms)
+[FAIL] numpy: NOT installed  (721.0ms)
+[PASS] Disk space: 165.12 GB free  (0.1ms)
+
+---
+Result: 5/7 checks passed ✗
+Total execution time: 1916.4ms
+
+=== Installed Packages ===
+Package            Version
+------------------ ---------
+astroid            4.0.4
+black              26.1.0
+certifi            2026.2.25
+charset-normalizer 3.4.4
+click              8.3.1
+colorama           0.4.6
+dill               0.4.1
+idna               3.11
+isort              8.0.1
+mccabe             0.7.0
+mypy_extensions    1.1.0
+numpy              2.4.2
+packaging          26.0
+pathspec           1.0.4
+pip                25.3
+platformdirs       4.9.2
+pylint             4.0.5
+pytokens           0.4.1
+requests           2.32.5
+tomlkit            0.14.0
+urllib3            2.6.3

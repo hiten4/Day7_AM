@@ -1,0 +1,69 @@
+[MASTER]
+# Beginner-friendly pylint configuration for AI/ML projects
+# Generated with AI assistance and reviewed for beginner suitability
+
+# Use multiple processes for speed
+jobs=1
+
+# Allow C extensions
+extension-pkg-whitelist=numpy,scipy,sklearn
+
+[MESSAGES CONTROL]
+# Disable rules that are too strict or noisy for beginners
+disable=
+    C0114,  # missing-module-docstring  (relax: beginners may skip module docstrings initially)
+    C0301,  # line-too-long             (handled by Black formatter)
+    W0611,  # unused-import             (too noisy during exploration in Jupyter-style scripts)
+    R0903,  # too-few-public-methods    (common in ML data classes)
+    W0212,  # protected-access          (sometimes needed in ML code)
+    C0103,  # invalid-name              (common short names like X, y, lr are fine in ML)
+    R0801,  # duplicate-code            (noisy for beginners)
+    W0105,  # pointless-string-statement (allow standalone strings as separators)
+
+# Enable important rules explicitly
+enable=
+    W0611,  # Re-enable unused-import for project files (override above for stricter files)
+    E0401,  # import-error
+    W0612   # unused-variable
+
+[REPORTS]
+# Output format
+output-format=text
+reports=yes
+score=yes
+
+[FORMAT]
+# Line length — Black uses 88 by default
+max-line-length=88
+indent-string='    '
+
+[DESIGN]
+# Relaxed limits for beginners
+max-args=8
+max-attributes=10
+max-bool-expr=5
+max-branches=15
+max-locals=20
+max-returns=6
+max-statements=60
+min-public-methods=1
+
+[BASIC]
+# Naming conventions — allow common ML/scientific names
+good-names=i,j,k,n,x,y,X,df,lr,fn,db,id,ok
+
+# Require docstrings only on public methods and functions
+no-docstring-rgx=^_
+
+[SIMILARITIES]
+# Minimum lines for duplicate code detection
+min-similarity-lines=10
+
+[TYPECHECK]
+# Ignore missing members for common ML libraries (dynamic attributes)
+ignored-classes=numpy,numpy.ndarray,pandas.DataFrame,sklearn
+generated-members=numpy.*,torch.*,cv2.*
+
+[IMPORTS]
+# Allow reordered imports typical in notebooks
+allow-reexport-from-package=yes
